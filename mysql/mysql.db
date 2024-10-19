@@ -1,0 +1,43 @@
+CREATE DATABASE CEI;
+
+USE CEI;
+
+CREATE TABLE users (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    username VARCHAR(255) NOT NULL UNIQUE,
+    password VARCHAR(255) NOT NULL
+);
+
+CREATE TABLE divisions (
+    id INT NOT NULL AUTO_INCREMENT,
+    division_code VARCHAR(255) NOT NULL,
+    division_name VARCHAR(255) NOT NULL,
+    PRIMARY KEY (id),
+    UNIQUE(division_code)
+);
+
+CREATE TABLE items (
+    id INT NOT NULL AUTO_INCREMENT,
+    part_number VARCHAR(255),
+    part_name VARCHAR(255),
+    uom VARCHAR(255),
+    qty BIGINT,
+    PRIMARY KEY (id),
+    UNIQUE (part_number)
+);
+
+CREATE table barang_transaksi (
+    id INT NOT NULL AUTO_INCREMENT,
+    division_id INT NOT NULL,
+    item_id INT NOT NULL,
+    doc_no VARCHAR(255),
+    tanggal_transaksi DATE,
+    tipe_transaksi VARCHAR(10),
+    qty BIGINT,
+    qty_sebelum BIGINT,
+    qty_sesudah BIGINT,
+    primary key (id),
+    FOREIGN KEY (division_id) REFERENCES divisions(id),
+    FOREIGN KEY (item_id) REFERENCES items(id),
+    UNIQUE (doc_no)
+);

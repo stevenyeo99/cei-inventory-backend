@@ -1,0 +1,36 @@
+{
+  "name": "cei-inventory-backend",
+  "version": "1.0.0",
+  "description": "CEI Inventory Backend API",
+  "main": "src/app.js",
+  "scripts": {
+    "start": "node src/app.js",
+    "dev": "nodemon src/app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stevenyeo99/cei-inventory-backend.git"
+  },
+  "author": "Steven & Steby.",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/stevenyeo99/cei-inventory-backend/issues"
+  },
+  "homepage": "https://github.com/stevenyeo99/cei-inventory-backend#readme",
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "body-parser": "^1.20.3",
+    "cookie-parser": "^1.4.7",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.21.1",
+    "jsonwebtoken": "^9.0.2",
+    "morgan": "^1.10.0",
+    "mysql2": "^3.11.3",
+    "path": "^0.12.7"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.7"
+  }
+}
