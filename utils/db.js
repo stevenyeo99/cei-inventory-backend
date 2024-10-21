@@ -12,8 +12,6 @@ async function initializeDatabase() {
         port: process.env.DB_PORT
     };
 
-    console.log(dbConfig);
-
     connection = await mysql.createConnection(dbConfig);
     console.log('Connected to the MySQL database.');
   }
