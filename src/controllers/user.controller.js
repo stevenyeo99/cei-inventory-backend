@@ -82,7 +82,24 @@ const login = async (req, res) => {
     }
 };
 
+const logout = async (req, res) => {
+    try {
+        res.clearCookie('token');
+
+        return res.status(200).json({
+            message: 'Logout Successfully',
+            success: true
+        });
+    } catch (err) {
+        return res.status(500).json({ 
+            message: 'System Encounter Error During Logout',
+            success: false
+        });
+    }
+};
+
 module.exports = {
     register,
-    login
+    login,
+    logout
 };

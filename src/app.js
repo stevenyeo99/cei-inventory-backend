@@ -11,6 +11,7 @@ const { initializeDatabase } = require('../utils/db');
 const userRouter = require('./routers/user.router');
 const divisionRouter = require('./routers/division.router');
 const itemRouter = require('./routers/item.router');
+const dataTransaksiRouter = require('./routers/data_transaksi.router');
 
 // Config.
 const app = express();
@@ -30,7 +31,7 @@ dotenv.config({path: path.join(__dirname, '..', '.env')});
 app.use('/user', userRouter);
 app.use('/division', divisionRouter);
 app.use('/item', itemRouter);
-
+app.use('/data_transaksi', dataTransaksiRouter);
 
 app.listen(PORT, async () => {
     await initializeDatabase();
