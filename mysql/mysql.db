@@ -36,8 +36,8 @@ CREATE table barang_transaksi (
     qty BIGINT,
     qty_sebelum BIGINT,
     qty_sesudah BIGINT,
+    is_fix varchar2(20),
     primary key (id),
     FOREIGN KEY (division_id) REFERENCES divisions(id),
-    FOREIGN KEY (item_id) REFERENCES items(id),
-    UNIQUE (doc_no)
+    FOREIGN KEY (item_id) REFERENCES items(id)
 );
